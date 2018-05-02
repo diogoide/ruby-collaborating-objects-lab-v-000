@@ -8,11 +8,10 @@ class MP3Importer
   end
 
   def files
-    @files = Dir.entries(path).select {|file| file.include?(".mp3")}
+    @files = Dir.entries(path).grep(/.*\.mp3/)
   end
 
   def import
-    self.files
     @files.each{|song| Song.new_by_filename(song)}
   end
 
