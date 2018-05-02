@@ -5,9 +5,6 @@ class MP3Importer
 
   def initialize(path)
     @path = path
-  end
-
-  def files
     @files = Dir.entries(path).grep(/.*\.mp3/)
   end
 
